@@ -370,6 +370,49 @@ getgenv().GetObjects = newcclosure(function(String)
     return {game:GetService("InsertService"):LoadLocalAsset(String)}
 end)
 
+local gmt = getrawmetatable(game)
+        local old = gmt.__namecall
+        local _game = game
+        setreadonly(gmt, false)
+        gmt.__namecall = function(self, ...)
+        if self == _game and getnamecallmethod() =='HttpGet' then
+        return HttpGet(...)
+    else if self == _game and getnamecallmethod() =='HttpGetAsync' then
+        return HttpGet(...)
+else if self == _game and getnamecallmethod() =='GetObjects' then
+    return GetObjects(...)
+end
+end
+
+        end
+
+        return old(self, ...)
+        end
+
+    
+    local gmt = getrawmetatable(game)
+local oldi = gmt.__index
+setreadonly(gmt, false)
+local _game = game
+gmt.__index = function(self, i)
+    if self == _game and i == 'HttpGet' then
+        return function(self, ...)
+            return _game:HttpGet(...)
+        end
+else if self == _game and i == 'HttpGetAsync' then
+        return function(self, ...)
+            return _game:HttpGet(...)
+        end
+       else if self == _game and i == 'GetObjects' then
+        return function(self, ...)
+            return _game:GetObjects(...)
+        end
+    end
+end
+end
+    return oldi(self, i)
+end
+
 function STORM_LOADED()
      
 end

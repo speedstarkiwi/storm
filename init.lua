@@ -412,3 +412,64 @@ getgenv().GetObjects = newcclosure(function(String)
     assert(String:match("rbxassetid://%w+"), "argument must be asset id")
     return {game:GetService("InsertService"):LoadLocalAsset(String)}
 end)
+
+function getmodules()
+local tabl = {}
+for i,v in next,getreg() do
+if type(v)=="table" then
+for n,c in next,v do
+if typeof(c) == "Instance" and (c:IsA("ModuleScript")) then --checks if its an instance and if its a modulescript
+table.insert(tabl, c) --inserts modules in the tabl table
+end
+end
+end
+end
+return tabl --returns the stuff in the tabl table
+end
+
+function getscripts()
+local tabl = {}
+for i,v in next,getreg() do
+if type(v)=="table" then
+for n,c in next,v do
+if typeof(c) == "Instance" and (c:IsA("LocalScript") or c:IsA("ModuleScript")) then --checks if its an instance and if its a localscript or a modulescript
+table.insert(tabl, c) --inserts scripts in the tabl table
+end
+end
+end
+end
+return tabl --returns the stuff in the tabl table
+end
+
+function getinstances()
+local tabl = {}
+for i,v in next,getreg() do
+if type(v)=="table" then
+for n,c in next,v do
+if typeof(c) == "Instance" then --checks if its an instance
+table.insert(tabl, c) --inserts instances in the tabl table
+end
+end
+end
+end
+return tabl --returns the stuff in the tabl table
+end
+
+function getnilinstances()
+local tabl = {}
+for i,v in next,getreg() do
+if type(v)=="table" then
+for n,c in next,v do
+if typeof(c) == "Instance" and c.Parent==nil then --checks if its an instance and if the parent is nil
+table.insert(tabl, c) --inserts nilinstances in the tabl table
+end
+end
+end
+end
+return tabl --returns the stuff in the tabl table
+end
+
+function dumpstring(gaysex)
+assert(type(gaysex) == "string", "fam wheres the string?", 2)  --check if its a string if its not it would error "fam wheres the string?"
+return tostring("\\" .. table.concat({string.byte(gaysex, 1, #gaysex)}, "\\"))
+end

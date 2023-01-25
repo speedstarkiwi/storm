@@ -1,3 +1,5 @@
+local TS = game:GetService('TweenService') local StormLoader = Instance.new('ScreenGui') local ImageLabel = Instance.new('ImageLabel') StormLoader.Name = 'StormLoader' StormLoader.Parent = game:GetService('CoreGui') StormLoader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling StormLoader.Enabled = true ImageLabel.Parent = StormLoader ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255) ImageLabel.BackgroundTransparency = 1 ImageLabel.Position = UDim2.new(0.5, -100, 0.5, -100) ImageLabel.Size = UDim2.new(0, 200, 0, 200) ImageLabel.ZIndex = 1000877866 ImageLabel.Image = 'rbxassetid://12008234655' ImageLabel.ScaleType = Enum.ScaleType.Tile ImageLabel.ImageTransparency = 1 TS:Create(ImageLabel, TweenInfo.new(.5), { ImageTransparency = 0 }):Play() wait(2) TS:Create(ImageLabel, TweenInfo.new(.5), { ImageTransparency = 1 }):Play() wait(.5) ImageLabel:Destroy()
+
 --[[
 
 ███████ ████████  ██████  ██████  ███    ███ 
@@ -56,9 +58,6 @@ end
 end
     return oldi(self, i)
 end
---]]
-
-local TS = game:GetService('TweenService') local StormLoader = Instance.new('ScreenGui') local ImageLabel = Instance.new('ImageLabel') StormLoader.Name = 'StormLoader' StormLoader.Parent = game:GetService('CoreGui') StormLoader.ZIndexBehavior = Enum.ZIndexBehavior.Sibling StormLoader.Enabled = true ImageLabel.Parent = StormLoader ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255) ImageLabel.BackgroundTransparency = 1 ImageLabel.Position = UDim2.new(0.5, -100, 0.5, -100) ImageLabel.Size = UDim2.new(0, 200, 0, 200) ImageLabel.ZIndex = 1000877866 ImageLabel.Image = 'rbxassetid://12008234655' ImageLabel.ScaleType = Enum.ScaleType.Tile ImageLabel.ImageTransparency = 1 TS:Create(ImageLabel, TweenInfo.new(.5), { ImageTransparency = 0 }):Play() wait(2) TS:Create(ImageLabel, TweenInfo.new(.5), { ImageTransparency = 1 }):Play() wait(.5) ImageLabel:Destroy()
 
 --- Bit Library
 local M = {_TYPE='module', _NAME='bitop.funcs', _VERSION='1.0-0'}
@@ -472,3 +471,5 @@ function dumpstring(gaysex)
 assert(type(gaysex) == "string", "fam wheres the string?", 2)  --check if its a string if its not it would error "fam wheres the string?"
 return tostring("\\" .. table.concat({string.byte(gaysex, 1, #gaysex)}, "\\"))
 end
+
+--]]

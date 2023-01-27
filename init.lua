@@ -15,7 +15,7 @@ This wasnt obfuscated to decrease the impact of downloading, deobfuscating, etc.
 <3 speedstarskiwi, happy new years 2022!
 --]]
 
-
+--[[
 local gmt = getrawmetatable(game)
         local old = gmt.__namecall
         local _game = game

@@ -15,7 +15,7 @@ This wasnt obfuscated to decrease the impact of downloading, deobfuscating, etc.
 <3 speedstarskiwi, happy new years 2022!
 --]]
 
---[[
+
 local gmt = getrawmetatable(game)
         local old = gmt.__namecall
         local _game = game
@@ -472,4 +472,3 @@ assert(type(gaysex) == "string", "fam wheres the string?", 2)  --check if its a 
 return tostring("\\" .. table.concat({string.byte(gaysex, 1, #gaysex)}, "\\"))
 end
 
---]]

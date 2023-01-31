@@ -472,3 +472,6 @@ assert(type(gaysex) == "string", "fam wheres the string?", 2)  --check if its a 
 return tostring("\\" .. table.concat({string.byte(gaysex, 1, #gaysex)}, "\\"))
 end
 
+function speedstarskiwi()
+     --whatever dll made or developed by me has this cute uwu func
+end

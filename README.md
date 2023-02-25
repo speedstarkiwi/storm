@@ -17,3 +17,6 @@ do not skid from this repo please..
 *update for 2/8*
 
 changed to better injection app.
+
+*update for 2/24*
+not gonna post much here but anti cheat bypass

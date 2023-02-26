@@ -20,3 +20,6 @@ changed to better injection app.
 
 *update for 2/24*
 not gonna post much here but anti cheat bypass
+
+*update for 2/26*
+adds httpget and httpgetassync 

@@ -23,3 +23,6 @@ not gonna post much here but anti cheat bypass
 
 *update for 2/26*
 adds httpget and httpgetassync 
+
+*update for 3/8*
+no
